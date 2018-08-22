@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mRootRlLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <io.vov.vitamio.widget.VideoView
+        android:id="@+id/mVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/mLoadingRlLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/text_light_dark">
+
+        <ProgressBar
+            android:id="@+id/mLoadingPb"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:indeterminate="false"
+            android:indeterminateDrawable="@drawable/video_loading"/>
+
+        <TextView
+            android:id="@+id/mLoadingTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mLoadingPb"
+            android:textColor="@color/common_white"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:text="正在加载中..."/>
+
+    </RelativeLayout>
+
+    <!--顶部panel-->
+    <LinearLayout
+        android:id="@+id/mTopLlLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/text_light_dark"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/mBackIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/mNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_white"
+            android:textSize="20sp"
+            android:text="湖南卫视"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/mTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_white"
+            android:layout_marginLeft="200dp"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            android:text="系统时间"/>
+
+    </LinearLayout>
+
+    <!--底部pannel-->
+    <LinearLayout
+        android:id="@+id/mBottomLlLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/text_light_dark"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/mPlayIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_pause"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

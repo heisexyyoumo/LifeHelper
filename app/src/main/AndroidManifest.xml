@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.heiseyoumo.smartbutler">
+
+    <!-- 允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许读取手机状态 用于创建BmobInstallation -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 允许程序改变网络连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 读取联系人权限，上传联系人需要用到此权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 短信权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 窗口权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+
+    <!-- 读取设备硬件信息，统计数据 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- 允许sd卡写权限，需写入地图数据，禁用后无法显示地图 -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 获取统计数据 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 鉴权所需该权限获取进程列表 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 使用步行AR导航，配置Camera权限 -->
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
+    <application
+        android:name=".application.BaseApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/assistant"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:theme="@style/NOActivityFullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- -设置 -->
+        <activity
+            android:name=".ui.SettingActivity"
+            android:label="@string/text_setting" />
+        <!-- -主页 -->
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/MainTheme" />
+        <!-- 引导页 -->
+        <activity
+            android:name=".ui.GuideActivity"
+            android:theme="@style/NOActivityFullscreen" />
+        <!-- 登录 -->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:label="登录" />
+        <!-- 注册 -->
+        <activity
+            android:name=".ui.RegiesteredActivity"
+            android:label="注册" />
+        <!-- 忘记/重置密码 -->
+        <activity
+            android:name=".ui.ForgetPasswordActivity"
+            android:label="修改密码" />
+        <!-- 快递查询 -->
+        <activity
+            android:name=".ui.CourierActivity"
+            android:label="快递查询" />
+        <!-- 归属地查询 -->
+        <activity
+            android:name=".ui.PhoneActivity"
+            android:label="归属地查询" />
+        <!-- 新闻详情 -->
+        <activity android:name=".ui.WebViewActivity" />
+        <!-- 短信服务 -->
+        <!-- 下载 -->
+        <activity
+            android:name=".ui.UpdateActivity"
+            android:label="下载更新" />
+        <!-- 我的位置 -->
+        <activity
+            android:name=".ui.LocationActivity"
+            android:label="我的位置" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="Ar588sa7DmbYHhGp86DZXFgO9OsExpqL" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <!-- 软件相关 -->
+        <activity
+            android:name=".ui.AboutActivity"
+            android:label="软件相关" />
+        <!-- 生成我的二维码 -->
+        <activity
+            android:name=".ui.QrCodeActivity"
+            android:label="我的二维码" />
+        <activity
+            android:name=".ui.FruitActivity"
+            android:theme="@style/NOActivityFullscreen" />
+        <!-- 个人中心 -->
+        <activity
+            android:name=".ui.UserInfoActivity"
+            android:theme="@style/MainTheme" />
+        <!-- 选择城市界面 -->
+        <activity
+            android:name=".ui.ChooseWeatherActivity"
+            android:theme="@style/WeatherTheme" />
+        <!-- 天气信息界面 -->
+        <activity
+            android:name=".ui.WeatherActivity"
+            android:theme="@style/WeatherTheme" />
+        <!--直播界面-->
+        <activity
+            android:name=".ui.LiveTvActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/WeatherTheme" />
+        <activity
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+    </application>
+
+</manifest>

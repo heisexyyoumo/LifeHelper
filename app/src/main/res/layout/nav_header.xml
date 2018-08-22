@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/mUserInfoRl"
+    android:layout_height="180dp"
+    android:padding="10dp"
+    android:background="@color/common_blue">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/mIconCv"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/add_pic"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/mDescTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="to be humorous"
+        android:textColor="#fff"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/mNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/mDescTv"
+        android:text="humorous"
+        android:textColor="#fff"
+        android:textSize="15sp"/>
+
+</RelativeLayout>

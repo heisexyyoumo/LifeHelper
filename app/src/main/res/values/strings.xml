@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SmartButler</string>
+
+    <string name="nSmart">小图聊天</string>
+    <string name="nWeChat">精选好文</string>
+    <string name="nGirl">美图一隅</string>
+    <string name="nUser">个人中心</string>
+    <string name="text_setting">设置</string>
+</resources>
